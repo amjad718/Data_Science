@@ -20,8 +20,10 @@ class ComplexNumber:
         return ComplexNumber(real_part, imaginary_part)
 
     def multiply(self, other):
-        real_part = (self.real * other.real) - (self.imaginary * other.imaginary)
-        imaginary_part = (self.real * other.imaginary) + (self.imaginary * other.real)
+        real_part = (self.real * other.real) 
+        # - (self.imaginary * other.imaginary)
+        imaginary_part = (self.real * other.imaginary) 
+        # + (self.imaginary * other.real)
         return ComplexNumber(real_part, imaginary_part)
 
 real1 = float(input("Enter the real part of the first complex number: "))
