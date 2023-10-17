@@ -1,16 +1,34 @@
 import numpy as np
+def input_matrix(rows, columns):
+    matrix = np.zeros((rows, columns), dtype=int)
+    for i in range(rows):
+        for j in range(columns):
+            matrix[i][j] = int(input(f"Enter element at position ({i + 1}, {j + 1}): "))
+    return matrix
 
-A = np.array([[1, 2],
-              [3, 4],
-              [5, 6]])
+# Input matrices A and B
+print("Enter the row and column size of Matrix A:")
+m1Row = int(input("Enter the row size: "))
+m1Column = int(input("Enter the column size: "))
+A = input_matrix(m1Row, m1Column)
 
-B = np.array([[7, 8],
-              [9, 10],
-              [11, 12]])
+print("\nEnter the row and column size of Matrix B:")
+m2Row = int(input("Enter the row size: "))
+m2Column = int(input("Enter the column size: "))
+B = input_matrix(m2Row, m2Column)
 
+if m1Column != m2Column:
+    print("Column sizes of Matrix A and Matrix B are not the same. Cannot perform multiplication.")
+else:
+    # Calculate the product of A and BT
+    result = np.dot(A, B.T)
 
-result = np.dot(A, B.T)
+    print("\nMatrix A:")
+    print(A)
 
-print("Product of A and B transpose:")
-print(result)
+    print("\nTranspose of Matrix B (BT):")
+    print(B.T)
+
+    print("\nProduct of A and BT:")
+    print(result)
 
