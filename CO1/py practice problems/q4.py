@@ -1,14 +1,13 @@
-import numpy as np
+import math
+degree =  int(input("Enter the value of X: "))
+lengthofSeries =  int(input("Enter the length of the series: "))
+radian = degree * (math.pi/180)
+sum = 0
 
-n = int(input("Enter the size of the square matrix: "))
+for i in range(lengthofSeries):
+    numerator = (-1)**i * radian**((2*i) + 1)
+    denominator = math.factorial((2*i) + 1)
+    result = numerator / denominator
+    sum += result
 
-arr = np.empty((n, n), dtype=int)
-
-print("Enter the elements row-wise:")
-for i in range(n):
-    row_input = input(f"Enter elements for row {i + 1} separated by spaces: ")
-    arr[i] = [int(x) for x in row_input.split()]
-
-diagonal_sum = np.trace(arr)
-
-print("Sum of diagonal elements:", diagonal_sum)
+print("Result: ", sum)
