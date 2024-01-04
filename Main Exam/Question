@@ -1,0 +1,5 @@
+Develop a machine learning model to predict salary using regression.
+  a) Plot a histogram to identify the number of samples under each job title
+  b) Display the title with maximum salary
+  c) Draw a line and scatter plot using test data scores
+  d) Identify the attribute having maximum impact on price
